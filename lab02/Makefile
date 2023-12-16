@@ -12,7 +12,7 @@ linked_list.o: linked_list.c linked_list.h
 test_linked_list.o: test_linked_list.c linked_list.h
 	$(CC) $(CFLAGS) -c test_linked_list.c
 
-phase3: bit_ops 
+lab3: 
 	gcc -o bit_ops bit_ops.c test_bit_ops.c
 
 phase4: vector
