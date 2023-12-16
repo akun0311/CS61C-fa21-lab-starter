@@ -3,10 +3,6 @@
 
 /* Returns the Nth bit of X. Assumes 0 <= N <= 31. */
 unsigned get_bit(unsigned x, unsigned n) {
-    // 1    2    3    4    5    6    7    8
-    // xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx 
-    // 0100 1110
-    //        10      
     unsigned  num = 1 << n;
     return (num & x) >> n;
 }
@@ -15,23 +11,16 @@ unsigned get_bit(unsigned x, unsigned n) {
 void set_bit(unsigned *x, unsigned n, unsigned v) {    
     unsigned num = 1 << n;
     if(v == 1){
-
+        (*x) |= num;    
     }else if (v == 0){
-        (*x) & (~num);
+        (*x) &= (~num);
     }
-    //old: 0100 1110
-//               ^
-//    tmp: 1111 1011
-/   //exp: 0100 1010   
-
-    //new: 0100 1110     
-  
-  
-
 }
 
 /* Flips the Nth bit in X. Assumes 0 <= N <= 31.*/
 void flip_bit(unsigned *x, unsigned n) {
-    /* YOUR CODE HERE */
+    unsigned v = get_bit(*x, n); //get the value of nth    
+    //if v == 1, v ^ 1 = 0
+    //if v == 0, v ^ 1 = 1
+    set_bit(x, n, v ^ 1);
 }
-

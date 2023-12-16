@@ -15,7 +15,7 @@ test_linked_list.o: test_linked_list.c linked_list.h
 lab3: 
 	gcc -o bit_ops bit_ops.c test_bit_ops.c
 
-phase4: vector
+vector: 
 	gcc -o vector vector.c test_vector.c
 
 clean:
